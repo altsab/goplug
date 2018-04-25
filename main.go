@@ -39,6 +39,6 @@ func main() {
 	var exC struct{}
 	calc.Init(exC)
 	fmt.Printf("SUM: %d\n", calc.Sum(2, 4))
-	fmt.Printf("SUM: %d\n", calc.Subtract(2, 4))
-	fmt.Printf("SUM: %d\n", calc.SolveEquation(4, 2))
+	fmt.Printf("SUBTRACT: %d\n", calc.Subtract(2, 4))
+	fmt.Printf("EQUATION: %d\n", calc.SolveEquation(4, 2))
 }
