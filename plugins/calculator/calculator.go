@@ -3,6 +3,20 @@ package main
 type calc struct{}
 type excalc struct{}
 
+// Calculator implements basic arithmetic calculations
+type Calculator interface {
+	Init(enhanced struct{})
+	Sum(a, b int) int
+	Subtract(a, b int) int
+	SolveEquation(a, b int) int
+}
+
+// EnhancedCalc implements more complex calculations
+type EnhancedCalc interface {
+	Multiply(a, b int) int
+	Divide(a, b int) int
+}
+
 // Initialize complex calc
 func (c calc) Init(someVar struct{}) {
 	exCalc = someVar
@@ -25,7 +39,7 @@ func (ex excalc) Divide(a, b int) int {
 }
 
 func (c calc) SolveEquation(a, b int) int {
-	return exCalc.Multiply(a, a) + exCalc.Divide(a, b) + exCalc.Multiply(2, a)
+	return exCalc.Multiply(a, a) + exCalc.Divide(a, b) + exCalc.Multiply(4, a)
 }
 
 var Calc calc
